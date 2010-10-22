@@ -1,0 +1,19 @@
+FormFactor: JQuery Form Tools Plugin
+
+---
+Improve and measure form performance on the web.
+---
+
+FormFactor aims to do two things:
+1) Provide form completion analytics, integrated with popular modern analytics applications.
+2) Provide additional feature intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
+
+Features (to-do):
+
+[ ] Initialization (GA ID)
+
+[ ] Auto-focus on first field
+
+[ ] Instrument on-focus for each field
+
+[ ] Instrument submission
