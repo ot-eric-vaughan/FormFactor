@@ -1,12 +1,12 @@
 FormFactor: JQuery Form Optimization Plugin
 
 ---
-Improve and measure form performance on the web.
+Measure and improve form performance on the web.
 ---
 
 FormFactor aims to do two things:
 1) Provide form completion analytics, integrated with popular modern analytics applications.
-2) Provide additional feature intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
+2) Provide additional features intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
 
 Installation Instructions:
 
@@ -33,4 +33,10 @@ Requirements:
 
 - Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
 
+
+Ideas:
+
+- Add form validation support, preferably without rewriting this common functionality.
+
+- Report form validation errors. This could be an extremely useful report for interaction designers.
 
