@@ -94,8 +94,12 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#my-form').formFactor({app:'GA', id:'123456'});
+			$('#my-form').formFactor({'DEBUG': true});
 		});
+		
+		function attemptSubmission(){
+			alert('Submission noted! (but we didn\'t do anything with it, because this is a demo)');
+		}
 	</script>
 </body>
 </html>
