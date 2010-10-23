@@ -94,7 +94,12 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('#my-form').formFactor({'DEBUG': true});
+			$('#my-form').formFactor(
+				{
+					'DEBUG': true,
+					'auto-focus': true
+				}
+			);
 		});
 		
 		function attemptSubmission(){

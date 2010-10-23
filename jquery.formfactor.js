@@ -1,6 +1,9 @@
 jQuery.fn.formFactor = function(options){
   var current_page = window.location;
   
+  // Perform auto-focus
+  if(options['auto-focus'] == true) $(this).find('input, textarea, select')[0].focus();
+  
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
   

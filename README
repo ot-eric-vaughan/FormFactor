@@ -1,4 +1,4 @@
-FormFactor: JQuery Form Tools Plugin
+FormFactor: JQuery Form Optimization Plugin
 
 ---
 Improve and measure form performance on the web.
@@ -7,26 +7,6 @@ Improve and measure form performance on the web.
 FormFactor aims to do two things:
 1) Provide form completion analytics, integrated with popular modern analytics applications.
 2) Provide additional feature intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
-
-Features (to-do):
-
-[ ] Initialization (App, ID)
-
-[ ] Auto-focus on first field
-
-[ ] Instrument on-focus for each field
-
-[ ] Instrument submission
-
-[X] ensure we only track each focus once
-
-[ ] Add Google Analytics
-
-[ ] Add Mixpanel
-
-Requirements:
-
-- GA: must use GA asynch tag, and initialize it. If you have the most up-to-date Google Analytics tag installed, all you need to do is follow the install instructions.
 
 Installation Instructions:
 
@@ -41,8 +21,16 @@ Installation Instructions:
 
 Options:
 
-app: 'GA' (Google Analytics), 'KM' (Kissmetrics), 'MP' (Mixpanel)
+GA: boolean. Enables Google Analytics tracking.
 
-id: your account/profile identifier from our analytics provider
+MP: boolean. Enables Mixpanel tracking.
 
-auto-focus: true/false, default: true. Places focus automatically on the first element of your form
+auto-focus: boolean. Places focus automatically on the first element of your form
+
+Requirements:
+
+- Google Analytics: you must use the GA asynchronous tracking tag (http://bit.ly/dgzkvC).
+
+- Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
+
+
