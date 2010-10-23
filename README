@@ -10,10 +10,39 @@ FormFactor aims to do two things:
 
 Features (to-do):
 
-[ ] Initialization (GA ID)
+[ ] Initialization (App, ID)
 
 [ ] Auto-focus on first field
 
 [ ] Instrument on-focus for each field
 
 [ ] Instrument submission
+
+[X] ensure we only track each focus once
+
+[ ] Add Google Analytics
+
+[ ] Add Mixpanel
+
+Requirements:
+
+- GA: must use GA asynch tag, and initialize it. If you have the most up-to-date Google Analytics tag installed, all you need to do is follow the install instructions.
+
+Installation Instructions:
+
+1) Make sure you are have JQuery on the page on which you wish to use FormFactor.
+
+2) Include the FormFactor .js, after the JQuery include.
+
+3) Call .formFactor() on the element(s) you wish to optimize
+
+4) Add any required options to the .formFactor() initialization call.
+
+
+Options:
+
+app: 'GA' (Google Analytics), 'KM' (Kissmetrics), 'MP' (Mixpanel)
+
+id: your account/profile identifier from our analytics provider
+
+auto-focus: true/false, default: true. Places focus automatically on the first element of your form
