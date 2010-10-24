@@ -1,4 +1,6 @@
-# FormFactor: JQuery Form Optimization Plugin
+!['FormFactor'](http://github.com/markitecht/FormFactor/raw/master/FormFactor.jpg)
+
+# JQuery Form Optimization Plugin
 
 Measure and improve form performance on the web.
 
