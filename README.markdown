@@ -32,15 +32,15 @@ In action:
 		}
 	);
 
-GA: boolean. Enables Google Analytics tracking.
+GA: boolean. Enables Google Analytics tracking (you must use the [GA asynchronous tracking tag](http://bit.ly/dgzkvC) )
 
-MP: boolean. Enables Mixpanel tracking.
+MP: boolean. Enables Mixpanel tracking (you must have an 'mpmetrics' object [initialized in the DOM](http://bit.ly/bsyV3V) )
 
 auto-focus: boolean. Places focus automatically on the first element of your form
 
 ## Requirements:
 
-* Google Analytics: you must use the [GA asynchronous tracking tag](http://bit.ly/dgzkvC).
+* Google Analytics: 
 
 * Mixpanel: you must have an 'mpmetrics' object [initialized in the DOM](http://bit.ly/bsyV3V).
 
