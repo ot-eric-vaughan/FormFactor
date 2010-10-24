@@ -33,6 +33,11 @@ Requirements:
 
 - Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
 
+Bugs:
+
+- Radio buttons not working.
+
+- Submit not being tracked.
 
 Ideas:
 

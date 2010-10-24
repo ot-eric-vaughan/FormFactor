@@ -1,25 +1,57 @@
 jQuery.fn.formFactor = function(options){
   var current_page = window.location;
+  var form_id = $(this).attr('id');
   
   // Perform auto-focus
   if(options['auto-focus'] == true) $(this).find('input, textarea, select')[0].focus();
   
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
+  var fields = [];
+  var addField = function(name){if(fields.indexOf(name) < 0) fields.push(name);}
   
   // Iterate through form elements
   $.each($(this).find('input, textarea, select'), function(i, elem) {
-    $(elem).focus(function(){
-      i++;
-      // Fire tracking if not already tracked
-      if(sent.indexOf($(elem).attr('name')) < 0){
-        if(options['GA'] == true) track_GA(i, $(elem).attr('name'));
-        if(options['MP'] == true) track_MP(i, $(elem).attr('name'), $(elem).attr('id'));
-        if(options['DEBUG'] == true) track_DEBUG(i, $(elem).attr('name'), $(elem).attr('id'));
-        sent.push($(elem).attr('name'));
+    var step_name = $(elem).attr('name');
+    addField(step_name);
+    
+    // Treat submit as de facto last step, write Action name accordingly.
+    if($(elem).attr('type') == 'submit'){
+      $(elem).click(function(){
+        var step = fields.indexOf(step_name) + 1;
+        var not_sent = sent.indexOf(step_name) < 0;
+        if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + $(elem).attr('value') + '")', form_id);
+      });
+    }
+    else{
+      if($(elem).attr('type') == 'radio'){
+        $(elem).change(function(){
+          var step = fields.indexOf(step_name) + 1;
+          var not_sent = sent.indexOf(step_name) < 0;
+          // Fire tracking if not already tracked
+          if(not_sent) fireTracking(step, step_name, form_id);
+        });
       }
-    });
+      // Treat other form fields as funnel steps.
+      else {
+        $(elem).focus(function(){
+          var step = fields.indexOf(step_name) + 1;
+          var not_sent = sent.indexOf(step_name) < 0;
+          // Fire tracking if not already tracked
+          if(not_sent) fireTracking(step, step_name, form_id);
+        });
+      }
+    }
   });
+  
+  // Send tracking 
+  var fireTracking = function(step, name, form_id){
+    if(options['GA'] == true) track_GA(step, name);
+    if(options['MP'] == true) track_MP(step, name, form_id);
+    if(options['DEBUG'] == true) track_DEBUG(step, name, form_id);
+    sent.push(name);
+    return false;
+  }
   
   // Analytics tracking functions
   
@@ -32,6 +64,7 @@ jQuery.fn.formFactor = function(options){
     catch(e){
       
     }
+    return false;
   }
   
   // Mixpanel
@@ -44,6 +77,7 @@ jQuery.fn.formFactor = function(options){
     catch(e){
     
     }
+    return false;
   }
   
   // Debug console
@@ -54,6 +88,7 @@ jQuery.fn.formFactor = function(options){
     catch(e){
       
     }
+    return false;
   }
 }
 
