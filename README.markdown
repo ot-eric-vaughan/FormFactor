@@ -58,15 +58,9 @@ Similarly to GA, FormFactor requires that you have already initialized a trackin
 
 FormFactor will create a *funnel* for every form *id* that you set up to use FormFactor. Each form field will represent a step in this funnel, proceeding (from beginning to end/goal) in the same order as the fields appear in the document.
 
-## Bugs:
+## Bugs and Suggestions:
 
-* None currently identified.
-
-## Ideas:
-
-* Add form validation support, preferably without rewriting this common functionality.
-
-* Report form validation errors. This could be an extremely useful report for interaction designers.
+Have an issue? Have an idea? [HOOK A BROTHER UP](http://github.com/markitecht/FormFactor/issues)
 
 ## Author
 
