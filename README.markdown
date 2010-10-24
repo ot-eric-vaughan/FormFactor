@@ -17,7 +17,7 @@ Measure and improve form performance on the web.
 
 2) Include the FormFactor .js, after the JQuery include.
 
-3) Call .formFactor() on the element(s) you wish to optimize
+3) Call .formFactor() on the element(s) you wish to optimize.
 
 4) Add any required options to the .formFactor() initialization call.
 
