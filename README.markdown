@@ -60,7 +60,7 @@ FormFactor will create a *funnel* for every form *id* that you set up to use For
 
 ## Bugs:
 
-[none currently identified]
+* None currently identified.
 
 ## Ideas:
 
