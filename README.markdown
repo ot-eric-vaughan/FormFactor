@@ -46,7 +46,7 @@ auto-focus: boolean. Places focus automatically on the first element of your for
 
 You have, presumably, initialized GA tracking on whatever pages you wish to use FormFactor (otherwise it will not work!).
 
-In the relevant profile, go to *Content* > *Event Tracking*, and specifically the category *Form Completion*. WHOA SWEET!
+In the relevant profile, go to *Content* > *Event Tracking* > *Categories* > *Form Completion*. WHOA SWEET!
 
 What you will see in this report is a series of *Actions* that represent steps through the completion of your form. Naturally, each form field is a step, and they go in sequence. They are numbered, based on the order in which they appear in the document, and named, based on the _name_ attribute of each form field.
 
