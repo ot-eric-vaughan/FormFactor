@@ -22,7 +22,7 @@ Measure and improve form performance on the web.
 4) Add any required options to the .formFactor() initialization call.
 
 
-## Options:
+## Tracking Options:
 
 In action:
 
@@ -37,8 +37,6 @@ In action:
 GA: boolean. Enables Google Analytics tracking (you must use the [GA asynchronous tracking tag](http://bit.ly/dgzkvC) )
 
 MP: boolean. Enables Mixpanel tracking (you must have an 'mpmetrics' object [initialized in the DOM](http://bit.ly/bsyV3V) )
-
-auto-focus: boolean. Places focus automatically on the first element of your form
 
 ## What Gets Tracked? What will I see in my analytics reports?
 
@@ -57,6 +55,39 @@ For the purpose of allowing you to easily filter to see (or hide) FormFactor eve
 Similarly to GA, FormFactor requires that you have already initialized a tracking object for Mixpanel on the relevant page(s) on which you wish to use FormFactor.
 
 FormFactor will create a *funnel* for every form *id* that you set up to use FormFactor. Each form field will represent a step in this funnel, proceeding (from beginning to end/goal) in the same order as the fields appear in the document.
+
+## Optimization Options
+
+FormFactor exists to not just measure and expose the performance of your web forms, but also to help improve that performance.
+
+In action:
+
+	$('#my-awesome-form').formFactor(
+		{
+			'auto-focus': true
+		}
+	);
+
+auto-focus: boolean. Places focus automatically on the first element of your form.
+	
+## Ajax Options
+
+FormFactor allows you to post the contents of a form to a url asynchronously (AJAX).
+
+In action:
+
+	$('#my-awesome-form').formFactor(
+		{
+			'ajax_post_url': '/ajax/forms/the-awesome-one',
+			'ajax_post_success': function(){
+				$('div#form-status').html('Form submitted!');
+			},
+			'ajax_post_failure': function(){
+				alert('Form submission failed!');
+			}
+		}
+	);
+
 
 ## Bugs and Suggestions:
 

@@ -16,6 +16,18 @@ jQuery.fn.formFactor = function(options){
     
     // Treat submit as de facto last step, write Action name accordingly.
     if($(elem).attr('type') == 'submit'){
+      // Add AJAX POST if desired
+      if(options['ajax_post_url']){
+        $(elem).bind('onsubmit', function(){
+          $.ajax({
+            url: options['ajax_post_url'],
+            type: 'POST',
+            data: $(elem).serializeArray();
+            success: options['ajax_post_success'],
+            failure: options['ajax_post_failure']
+          });
+        });
+      }
       $(elem).click(function(){
         var step = fields.indexOf(step_name) + 1;
         var not_sent = sent.indexOf(step_name) < 0;
