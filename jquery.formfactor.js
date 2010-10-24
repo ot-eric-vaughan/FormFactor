@@ -1,5 +1,4 @@
 jQuery.fn.formFactor = function(options){
-  var current_page = window.location;
   var form_id = $(this).attr('id');
   
   // Perform auto-focus
@@ -69,7 +68,7 @@ jQuery.fn.formFactor = function(options){
   
   // Mixpanel
   var track_MP = function(step, name, form_id){
-    var funnel_name = 'Form ' + form_id + ' ' + current_page;
+    var funnel_name = 'Form ' + form_id;
     var step = parseInt(step);
     try {
       mpmetrics.track_funnel(funnel_name, step, name);
@@ -83,7 +82,7 @@ jQuery.fn.formFactor = function(options){
   // Debug console
   var track_DEBUG = function(step, name, form_id){
     try {
-      console.log('Event tracked. Details: "step": ' + step + ' "name": ' + name + ' "form_id": ' + form_id + ' "current page": ' + current_page);
+      console.log('Event tracked. Details: "step": ' + step + ' "name": ' + name + ' "form_id": ' + form_id);
     }
     catch(e){
       

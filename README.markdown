@@ -38,11 +38,23 @@ MP: boolean. Enables Mixpanel tracking (you must have an 'mpmetrics' object [ini
 
 auto-focus: boolean. Places focus automatically on the first element of your form
 
-## Requirements:
+## What Gets Tracked? What will I see in my analytics reports?
 
-* Google Analytics: 
+### Google Analytics
 
-* Mixpanel: you must have an 'mpmetrics' object [initialized in the DOM](http://bit.ly/bsyV3V).
+You have, presumably, initialized GA tracking on whatever pages you wish to use FormFactor (otherwise it will not work!).
+
+In the relevant profile, go to *Content* > *Event Tracking*, and specifically the category *Form Completion*. WHOA SWEET!
+
+What you will see in this report is a series of *Actions* that represent steps through the completion of your form. Naturally, each form field is a step, and they go in sequence. They are numbered, based on the order in which they appear in the document, and named, based on the _name_ attribute of each form field.
+
+For the purpose of allowing you to easily filter to see (or hide) FormFactor events in Google Analytics, every event shares the same label: 'FormFactor: Form Optimization Plugin'. It is anticipated that this label will also help other people identify where this data comes from, and what its purpose is. This will come in handy when you are offered several other fancy jobs (as a result of using FormFactor), and your metrics and analytics work is left to some newcomer who will be swamped and perform poorly in your (old) position, never living up to the expectations you so unfairly set before abandoning ship.
+
+### Mixpanel
+
+Similarly to GA, FormFactor requires that you have already initialized a tracking object for Mixpanel on the relevant page(s) on which you wish to use FormFactor.
+
+FormFactor will create a *funnel* for every form *id* that you set up to use FormFactor. Each form field will represent a step in this funnel, proceeding (from beginning to end/goal) in the same order as the fields appear in the document.
 
 ## Bugs:
 
