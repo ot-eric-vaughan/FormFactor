@@ -6,6 +6,7 @@ Measure and improve form performance on the web.
 ## Purpose
 
 1) Provide form completion analytics, integrated with popular modern analytics applications.
+
 2) Provide additional features intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
 
 ## Installation Instructions:
@@ -45,7 +46,7 @@ auto-focus: boolean. Places focus automatically on the first element of your for
 
 ## Author
 
-[Christopher O'Donnell] (http://markitecht.tumblr.com) ([@markitecht](http://twitter.com/markitecht))
+[Christopher O'Donnell](http://markitecht.tumblr.com) ([@markitecht](http://twitter.com/markitecht))
 
 ## Other
 
