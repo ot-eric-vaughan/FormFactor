@@ -45,7 +45,7 @@ auto-focus: boolean. Places focus automatically on the first element of your for
 
 ## Author
 
-[Ryan McGeary](http://ryan.mcgeary.org) ([@rmm5t](http://twitter.com/rmm5t))
+[Christopher O'Donnell] (http://markitecht.tumblr.com) ([@markitecht](http://twitter.com/markitecht))
 
 ## Other
 
