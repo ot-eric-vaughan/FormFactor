@@ -1,14 +1,14 @@
-FormFactor: JQuery Form Optimization Plugin
+# FormFactor: JQuery Form Optimization Plugin
 
----
 Measure and improve form performance on the web.
----
 
-FormFactor aims to do two things:
+
+## Purpose
+
 1) Provide form completion analytics, integrated with popular modern analytics applications.
 2) Provide additional features intended to make deploying HTML web forms easier, faster, more reportable, and more robust.
 
-Installation Instructions:
+## Installation Instructions:
 
 1) Make sure you are have JQuery on the page on which you wish to use FormFactor.
 
@@ -19,7 +19,7 @@ Installation Instructions:
 4) Add any required options to the .formFactor() initialization call.
 
 
-Options:
+## Options:
 
 GA: boolean. Enables Google Analytics tracking.
 
@@ -27,21 +27,28 @@ MP: boolean. Enables Mixpanel tracking.
 
 auto-focus: boolean. Places focus automatically on the first element of your form
 
-Requirements:
+## Requirements:
 
-- Google Analytics: you must use the GA asynchronous tracking tag (http://bit.ly/dgzkvC).
+* Google Analytics: you must use the GA asynchronous tracking tag (http://bit.ly/dgzkvC).
 
-- Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
+* Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
 
-Bugs:
+## Bugs:
 
-- Radio buttons not working.
+[none currently identified]
 
-- Submit not being tracked.
+## Ideas:
 
-Ideas:
+* Add form validation support, preferably without rewriting this common functionality.
 
-- Add form validation support, preferably without rewriting this common functionality.
+* Report form validation errors. This could be an extremely useful report for interaction designers.
 
-- Report form validation errors. This could be an extremely useful report for interaction designers.
+## Author
 
+[Ryan McGeary](http://ryan.mcgeary.org) ([@rmm5t](http://twitter.com/rmm5t))
+
+## Other
+
+[MIT License](http://www.opensource.org/licenses/mit-license.php)
+
+Copyright (c) 2010, Christopher O'Donnell (markitecht -[at]- gmail [*dot*] com)
