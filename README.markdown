@@ -22,6 +22,16 @@ Measure and improve form performance on the web.
 
 ## Options:
 
+In action:
+
+	$('#my-awesome-form').formFactor(
+		{
+			GA: true,
+			MP: true,
+			auto-focus: true
+		}
+	);
+
 GA: boolean. Enables Google Analytics tracking.
 
 MP: boolean. Enables Mixpanel tracking.
