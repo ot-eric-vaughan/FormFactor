@@ -30,9 +30,9 @@ auto-focus: boolean. Places focus automatically on the first element of your for
 
 ## Requirements:
 
-* Google Analytics: you must use the GA asynchronous tracking tag (http://bit.ly/dgzkvC).
+* Google Analytics: you must use the [GA asynchronous tracking tag](http://bit.ly/dgzkvC).
 
-* Mixpanel: you must have an 'mpmetrics' object initialized in the DOM (http://bit.ly/bsyV3V).
+* Mixpanel: you must have an 'mpmetrics' object [initialized in the DOM](http://bit.ly/bsyV3V).
 
 ## Bugs:
 
