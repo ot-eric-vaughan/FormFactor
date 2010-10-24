@@ -89,7 +89,7 @@
 				<input type="radio" name="favorite-animal" value="Donkey" /> Donkey<br />
 			</div>
 			<div class="item">
-				<input type="submit" />
+				<input type="submit" value="Enter Details" />
 			</div>
 		</form>
 	</div>
@@ -98,7 +98,10 @@
 			$('#my-form').formFactor(
 				{
 					'DEBUG': true,
-					'auto-focus': true
+					'auto-focus': true//,
+					//'ajax_post_url': '/test',
+					//'ajax_post_success': function(){alert('worked!');},
+					//'ajax_post_failure': function(){alert('failed');}
 				}
 			);
 		});

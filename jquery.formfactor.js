@@ -1,4 +1,5 @@
 jQuery.fn.formFactor = function(options){
+  var current_form = $(this);
   var form_id = $(this).attr('id');
   
   // Perform auto-focus
@@ -10,7 +11,7 @@ jQuery.fn.formFactor = function(options){
   var addField = function(name){if(fields.indexOf(name) < 0) fields.push(name);}
   
   // Iterate through form elements
-  $.each($(this).find('input, textarea, select'), function(i, elem) {
+  $.each(current_form.find('input, textarea, select'), function(i, elem) {
     var step_name = $(elem).attr('name');
     addField(step_name);
     
@@ -18,20 +19,22 @@ jQuery.fn.formFactor = function(options){
     if($(elem).attr('type') == 'submit'){
       // Add AJAX POST if desired
       if(options['ajax_post_url']){
-        $(elem).bind('onsubmit', function(){
+        console.debug(current_form);
+        current_form.submit(function(){
           $.ajax({
             url: options['ajax_post_url'],
             type: 'POST',
-            data: $(elem).serializeArray();
+            data: $(elem).serializeArray(),
             success: options['ajax_post_success'],
             failure: options['ajax_post_failure']
           });
+          return false;
         });
       }
       $(elem).click(function(){
         var step = fields.indexOf(step_name) + 1;
         var not_sent = sent.indexOf(step_name) < 0;
-        if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + $(elem).attr('value') + '")', form_id);
+        if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + $(elem).val() + '")', form_id);
       });
     }
     else{
