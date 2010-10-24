@@ -26,9 +26,9 @@ In action:
 
 	$('#my-awesome-form').formFactor(
 		{
-			GA: true,
-			MP: true,
-			auto-focus: true
+			'GA': true,
+			'MP': true,
+			'auto-focus': true
 		}
 	);
 
