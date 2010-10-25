@@ -64,15 +64,19 @@ In action:
 	$('#my-awesome-form').formFactor(
 		{
 			'auto-focus': true,
-			'top-align-labels': true
+			'top-align-labels': true,
+			'light-labels': true
 		}
 	);
 
 auto-focus: boolean. Places focus automatically on the first element of your form.
+
 top-align-labels: boolean. Makes *label* elements block-level. So what? It turns out top-aligned labels [speed up form completion](http://uxmovement.com/design-articles/faster-with-top-aligned-labels). Label your fields like this and it will work beautifully:
 
 	<label>First Name</label>
 	<input type="text" name="first-name" value="Christopher" />
+	
+light-labels: boolean. De-bolds form labels. It turns out that bolding form labels causes the user to take longer to fill out the form [The science](http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php)
 	
 ## Ajax Options
 

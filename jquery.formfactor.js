@@ -8,6 +8,9 @@ jQuery.fn.formFactor = function(options){
   // Perform block-leveling of labels
   if(options['top-align-labels'] == true) $(this).find('label').css('display', 'block');
   
+  // Perform de-bolding of labels
+  if(options['light-labels'] == true) $(this).find('label').css('font-weight', 'normal');
+  
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
   var fields = [];
