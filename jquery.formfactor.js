@@ -5,6 +5,9 @@ jQuery.fn.formFactor = function(options){
   // Perform auto-focus
   if(options['auto-focus'] == true) $(this).find('input, textarea, select')[0].focus();
   
+  // Perform block-leveling of labels
+  if(options['block-level'] == true) $(this).find('label').css('display', 'block');
+  
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
   var fields = [];

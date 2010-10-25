@@ -63,11 +63,16 @@ In action:
 
 	$('#my-awesome-form').formFactor(
 		{
-			'auto-focus': true
+			'auto-focus': true,
+			'block-labels': true
 		}
 	);
 
 auto-focus: boolean. Places focus automatically on the first element of your form.
+block-labels: boolean. Makes *label* elements block-level. So what? It turns out top-aligned labels [speed up form completion](http://uxmovement.com/design-articles/faster-with-top-aligned-labels). Label your fields like this and it will work beautifully:
+
+	<label>First Name</label>
+	<input type="text" name="first-name" value="Christopher" />
 	
 ## Ajax Options
 
