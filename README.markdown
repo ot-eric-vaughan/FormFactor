@@ -76,7 +76,7 @@ top-align-labels: boolean. Makes *label* elements block-level. So what? It turns
 	<label>First Name</label>
 	<input type="text" name="first-name" value="Christopher" />
 	
-light-labels: boolean. De-bolds form labels. It turns out that bolding form labels causes the user to take longer to fill out the form [The science](http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php)
+light-labels: boolean. De-bolds form labels. It turns out that bolding form labels causes the user to take longer to fill out the form [the science](http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php)
 	
 ## Ajax Options
 
