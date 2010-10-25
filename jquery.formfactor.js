@@ -41,7 +41,7 @@ jQuery.fn.formFactor = function(options){
       });
     }
     else{
-      if($(elem).attr('type') == 'radio'){
+      if($(elem).attr('type') == 'radio' || $(elem).attr('type') == 'checkbox'){
         $(elem).change(function(){
           var step = fields.indexOf(step_name) + 1;
           var not_sent = sent.indexOf(step_name) < 0;
