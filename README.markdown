@@ -101,6 +101,10 @@ In action:
 
 Have an issue? Have an idea? [HOOK A BROTHER UP](http://github.com/markitecht/FormFactor/issues)
 
+## jQuery Plugin Home
+
+[Official business](http://plugins.jquery.com/project/FormFactor)
+
 ## Author
 
 [Christopher O'Donnell](http://markitecht.tumblr.com) ([@markitecht](http://twitter.com/markitecht))
