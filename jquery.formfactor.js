@@ -25,7 +25,6 @@ jQuery.fn.formFactor = function(options){
     if($(elem).attr('type') == 'submit'){
       // Add AJAX POST if desired
       if(options['ajax_post_url']){
-        console.debug(current_form);
         current_form.submit(function(){
           $.ajax({
             url: options['ajax_post_url'],
