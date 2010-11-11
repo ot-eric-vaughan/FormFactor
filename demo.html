@@ -74,6 +74,7 @@
 	<div id="wrapper">
 		<img src="FormFactor.jpg" />
 		<form id="my-form" method="POST" onsubmit="javascript:attemptSubmission(); return false;">
+			<input type="hidden" name="secretstuff" value="thisshouldgetskipped" />
 			<div class="item">
 				<label for="first-name">First Name</label>
 				<input type="text" name="first-name" value="Christopher" />

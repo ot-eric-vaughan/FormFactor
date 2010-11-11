@@ -18,8 +18,10 @@ jQuery.fn.formFactor = function(options){
   
   // Iterate through form elements
   $.each(current_form.find('input, textarea, select'), function(i, elem) {
-    var step_name = $(elem).attr('name');
-    addField(step_name);
+    if ($(elem).attr('type') != 'hidden'){
+      var step_name = $(elem).attr('name');
+      addField(step_name);
+    }
     
     // Treat submit as de facto last step, write Action name accordingly.
     if($(elem).attr('type') == 'submit'){
