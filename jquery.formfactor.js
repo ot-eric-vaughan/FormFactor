@@ -1,15 +1,15 @@
 jQuery.fn.formFactor = function(options){
-  var current_form = $(this);
-  var form_id = $(this).attr('id');
+  var current_form = jQuery(this);
+  var form_id = jQuery(this).attr('id');
   
   // Perform auto-focus
-  if(options['auto-focus'] == true) $(this).find('input, textarea, select')[0].focus();
+  if(options['auto-focus'] == true) jQuery(this).find('input, textarea, select')[0].focus();
   
   // Perform block-leveling of labels
-  if(options['top-align-labels'] == true) $(this).find('label').css('display', 'block');
+  if(options['top-align-labels'] == true) jQuery(this).find('label').css('display', 'block');
   
   // Perform de-bolding of labels
-  if(options['light-labels'] == true) $(this).find('label').css('font-weight', 'normal');
+  if(options['light-labels'] == true) jQuery(this).find('label').css('font-weight', 'normal');
   
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
@@ -17,36 +17,36 @@ jQuery.fn.formFactor = function(options){
   var addField = function(name){if(fields.indexOf(name) < 0) fields.push(name);}
   
   // Iterate through form elements
-  $.each(current_form.find('input, textarea, select'), function(i, elem) {
-    if ($(elem).attr('type') != 'hidden'){
-      var step_name = $(elem).attr('name');
+  jQuery.each(current_form.find('input, textarea, select'), function(i, elem) {
+    if (jQuery(elem).attr('type') != 'hidden'){
+      var step_name = jQuery(elem).attr('name');
       addField(step_name);
     }
     
     // Treat submit as de facto last step, write Action name accordingly.
-    if($(elem).attr('type') == 'submit'){
+    if(jQuery(elem).attr('type') == 'submit'){
       // Add AJAX POST if desired
       if(options['ajax_post_url']){
         current_form.submit(function(){
-          $.ajax({
+          jQuery.ajax({
             url: options['ajax_post_url'],
             type: 'POST',
-            data: $(elem).serializeArray(),
+            data: jQuery(elem).serializeArray(),
             success: options['ajax_post_success'],
             failure: options['ajax_post_failure']
           });
           return false;
         });
       }
-      $(elem).click(function(){
+      jQuery(elem).click(function(){
         var step = fields.indexOf(step_name) + 1;
         var not_sent = sent.indexOf(step_name) < 0;
-        if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + $(elem).val() + '")', form_id);
+        if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + jQuery(elem).val() + '")', form_id);
       });
     }
     else{
-      if($(elem).attr('type') == 'radio' || $(elem).attr('type') == 'checkbox'){
-        $(elem).change(function(){
+      if(jQuery(elem).attr('type') == 'radio' || jQuery(elem).attr('type') == 'checkbox'){
+        jQuery(elem).change(function(){
           var step = fields.indexOf(step_name) + 1;
           var not_sent = sent.indexOf(step_name) < 0;
           // Fire tracking if not already tracked
@@ -55,7 +55,7 @@ jQuery.fn.formFactor = function(options){
       }
       // Treat other form fields as funnel steps.
       else {
-        $(elem).focus(function(){
+        jQuery(elem).focus(function(){
           var step = fields.indexOf(step_name) + 1;
           var not_sent = sent.indexOf(step_name) < 0;
           // Fire tracking if not already tracked
