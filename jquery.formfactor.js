@@ -14,7 +14,7 @@ jQuery.fn.formFactor = function(options){
   // Array of form focus events that have already been tracked for this pageview.
   var sent = [];
   var fields = [];
-  var addField = function(name){if(fields.indexOf(name) < 0) fields.push(name);}
+  var addField = function(name){if(jQuery.inArray(name, fields) < 0) fields.push(name);}
   
   // Iterate through form elements
   jQuery.each(current_form.find('input, textarea, select'), function(i, elem) {
@@ -39,16 +39,16 @@ jQuery.fn.formFactor = function(options){
         });
       }
       jQuery(elem).click(function(){
-        var step = fields.indexOf(step_name) + 1;
-        var not_sent = sent.indexOf(step_name) < 0;
+        var step = jQuery.inArray(step_name, fields) + 1;
+        var not_sent = jQuery.inArray(step_name, sent) < 0;
         if(not_sent) fireTracking(step, 'Form Submitted (button text: "' + jQuery(elem).val() + '")', form_id);
       });
     }
     else{
       if(jQuery(elem).attr('type') == 'radio' || jQuery(elem).attr('type') == 'checkbox'){
         jQuery(elem).change(function(){
-          var step = fields.indexOf(step_name) + 1;
-          var not_sent = sent.indexOf(step_name) < 0;
+          var step = jQuery.inArray(step_name, fields) + 1;
+          var not_sent = jQuery.inArray(step_name, sent) < 0;
           // Fire tracking if not already tracked
           if(not_sent) fireTracking(step, step_name, form_id);
         });
@@ -56,8 +56,8 @@ jQuery.fn.formFactor = function(options){
       // Treat other form fields as funnel steps.
       else {
         jQuery(elem).focus(function(){
-          var step = fields.indexOf(step_name) + 1;
-          var not_sent = sent.indexOf(step_name) < 0;
+          var step = jQuery.inArray(step_name, fields) + 1;
+          var not_sent = jQuery.inArray(step_name, sent) < 0;
           // Fire tracking if not already tracked
           if(not_sent) fireTracking(step, step_name, form_id);
         });
